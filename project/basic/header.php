@@ -1,5 +1,19 @@
 
+ <?php
+
+session_start();
+
+
+ if($_SESSION['username'] == "")
+ {
+     ?>
+     <script>
+     window.location.href = ("./login.php");
+     </script>
+ <?php 
+ }
  
+ ?>
  
  <!-- top navbar -->
  <div class="top-navbar">
@@ -54,7 +68,9 @@
                     <a class="nav-link" href="contact.html">Contact Us</a>
                   </li>
                 </ul>
-               
+                
+                <h3><?php echo $_SESSION['username']?></h3>
+
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
@@ -68,20 +84,6 @@
 
 
 
-        <!-- home content -->
-        <section class="home">
-            <div class="content">
-                <h3>Biggest Clothe Sale
-                    <br> <span>Up To 50% Off</span>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque culpa, totam sed maxime animi facilis!</p>
-                <button id="shopnow">Shop Now</button>
-            </div>
-            <div class="img">
-                <img src="./image/b2.png" alt="">
-            </div>
-        </section>
-        <!-- home content -->
-    </div>
+   
 
 

@@ -30,10 +30,16 @@ if(isset($_REQUEST['add']))
         $sign->execute();
         if($sign)
         {
-            echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
-      <strong>You Registered Successfully</strong>.
-      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-    </div>";
+    //         echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+    //   <strong>You Registered Successfully</strong>.
+    //   <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    // </div>";
+
+    ?>
+        <script>
+        window.location.href = ("./login.php");
+        </script>
+<?php
         }
     }
 

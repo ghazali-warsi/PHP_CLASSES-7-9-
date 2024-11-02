@@ -1,6 +1,12 @@
 <?php 
+session_start();
+
 include "./basic/startlinks.php";
 include "./basic/header.php";
+include "./config.php";
+
+
+
 
 ?>
 
@@ -8,29 +14,65 @@ include "./basic/header.php";
  <!-- login -->
  <div class="container login">
             <div class="row">
-                <div class="col-md-4" id="side1">
-                    <h3>Hello Friend!</h3>
-                    <p>Create New Account</p>
-                    <div id="btn"><a href="signup.html">Sign up</a></div>
+                <div class="col-12">
+                    <form action="" method="post">
+
+                <div class="mt-3">
+                    <label for="e">Email</label>
+                    <input type="email" name="useremail" id="e" placeholder="Enter Email" class="form-control" required>
                 </div>
-                <div class="col-md-8" id="side2">
-                    <h3>Login Account</h3>
-                    <div class="inp">
-                        <input type="text" placeholder="User Name" required>
-                        <input type="text" placeholder="Password" required>
-                    </div>
-                    <p>Forgot Your Password</p>
-                    <div class="icons">
-                        <i class="fa-brands fa-twitter"></i>
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div id="login"><button>LOG IN</button></div>
+                <div class="mt-3">
+                    <label for="p">Password</label>
+                    <input type="password" name="userpass" id="p" placeholder="Enter Password" class="form-control" required>
                 </div>
+
+                <div class="mt-3">
+                   <button type="submit" class="btn btn-primary" name="login">Login</button>
+                </div>
+            </form>
             </div>
         </div>
+            </div>
         <!-- login -->
 
+        <?php 
+        
+        if(isset($_REQUEST['login']))
+{
+     $email = $_REQUEST['useremail'];
+     $password = $_REQUEST['userpass'];
+
+    $fetch = $conn->prepare("SELECT * FROM signup WHERE email = '$email' ");
+    $fetch->execute();
+    $row = $fetch->fetch();
+    
+    $signEmail =  $row['email'];
+    $signPass =  $row['password'];
+
+    $_SESSION['username'] = $row['name'];
+
+    // $verifyPass = password_verify();
+    
+    if($email == $signEmail && password_verify($password , $signPass))
+    {
+        // header("Location: index.php");
+        // echo "login successfull";
+?>
+        <script>
+        window.location.href = ("./index.php");
+        </script>
+<?php  
+}
+    else
+    {
+    echo "password or email not correct";
+    }
+
+}
+
+
+        
+        ?>
 
         <?php 
         
