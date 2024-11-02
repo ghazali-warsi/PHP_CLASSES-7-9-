@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 
 include "./basic/startlinks.php";
 include "./basic/header.php";
@@ -49,7 +49,7 @@ include "./config.php";
     $signEmail =  $row['email'];
     $signPass =  $row['password'];
 
-    $_SESSION['username'] = $row['name'];
+    // $_SESSION['username'] = $row['name'];
 
     // $verifyPass = password_verify();
     

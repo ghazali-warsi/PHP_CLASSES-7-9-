@@ -16,5 +16,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./basic/style.css">
     <!-- fonts links -->
+     <style>
+        .card img {
+            width: 100%;
+            height: 250px;
+            text-align: center;
+            object-fit: contain;
+
+
+
+        }
+     </style>
 </head>
 <body>

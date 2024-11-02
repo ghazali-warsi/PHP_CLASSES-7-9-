@@ -1,20 +1,4 @@
 
- <?php
-
-session_start();
-
-
- if($_SESSION['username'] == "")
- {
-     ?>
-     <script>
-     window.location.href = ("./login.php");
-     </script>
- <?php 
- }
- 
- ?>
- 
  <!-- top navbar -->
  <div class="top-navbar">
         <div class="top-icons">
@@ -69,8 +53,7 @@ session_start();
                   </li>
                 </ul>
                 
-                <h3><?php echo $_SESSION['username']?></h3>
-
+                
                 <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit" id="search-btn">Search</button>
