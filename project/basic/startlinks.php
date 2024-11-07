@@ -23,7 +23,13 @@
             text-align: center;
             object-fit: contain;
 
+        }
 
+        img {
+            width: 70%;
+            height: 100px;
+            text-align: center;
+            /* object-fit: contain; */
 
         }
      </style>
