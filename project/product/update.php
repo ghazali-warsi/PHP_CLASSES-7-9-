@@ -95,11 +95,12 @@ $imageFetch = $conn->prepare("SELECT * FROM products WHERE id = '$updID'");
 $imageFetch->execute();
 $data=  $imageFetch->fetch();
 $oldImage = $data['image'] ;
+
 $updName  = $_REQUEST['prname'];
     $updDesc  = $_REQUEST['prdesc']; 
     $updPrice  = $_REQUEST['prprice'];
     $updimage  = $_FILES['primage']['name'];
-    echo $updimage;
+    // echo $updimage;
     $UpdimageTmp = $_FILES['primage']['tmp_name'];
     $updImageLoc = "./uploads/".$updimage;
 if($updimage == null)
